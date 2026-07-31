@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bean &amp; Brew — Tailwind CSS Assignment</title>
+  <link href="./src/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+
+  <!-- Connects to Google Font Servers -->
+<link rel="preconnect" href="https://googleapis.com">
+<link rel="preconnect" href="https://gstatic.com" crossorigin>
+
+<!-- Imports Syne (Stylish Sans), Cormorant Garamond (Elegant Serif), and Inter (Clean Body Text) -->
+<link href="https://googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+
+  <!--
+    ============================================================
+    TAILWIND CSS IS ALREADY LOADED FOR YOU (line below).
+    Your job: add Tailwind utility classes to the HTML elements
+    to turn this plain page into a beautiful, responsive website.
+
+    DO NOT change the HTML structure or the text.
+    ONLY add class="..." attributes to style the elements.
+    ============================================================
+  -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+  <!-- ========================================================= -->
+  <!-- SECTION 1: NAVIGATION BAR                                  -->
+  <!-- Hint: make this a horizontal bar. Logo on the left,        -->
+  <!-- links in the middle/right, button on the far right.        -->
+  <!-- Try: flex, justify-between, items-center, gap, padding.    -->
+  <!-- ========================================================= -->
+  <header class="bg-[#3d2c2e] text-white sticky top-0 shadow-lg z-10">
+    <nav class="max-w-7xl mx-auto px-6 flex justify-between items-center h-16">
+      <a href="#" class="text-xl font-bold hover:text-[#eebb6a] transition">Bean &amp; Brew</a>
+      <ul class="hidden lg:flex items-center gap-8 font-medium text-[16px] text-white text-opacity-80">
+        <li><a href="#menu" class="hover:text-[#f2cc8f] transition">Menu</a></li>
+        <li><a href="#about" class="hover:text-[#f2cc8f] transition">About</a></li>
+        <li><a href="#contact" class="hover:text-[#f2cc8f] transition">Contact</a></li>
+      </ul>
+      <button class="hidden lg:flex bg-[#f2cc8f] text-[#3d2c2e] px-4 py-2 rounded-md hover:bg-[#eebb6a] transition">Order Now</button>
+
+      <!-- ================= MOBILE BUTTON ================= -->
+
+      <button id="menu-btn" class="lg:hidden text-2xl text-[#f2cc8f]">
+      <i id="menu-icon" class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+
+    <!-- ================= MOBILE MENU ================= -->
+
+    <div id="menu-mobile" class="hidden px-7 pb-6">
+      <ul class="flex flex-col gap-4 py-4 text-white text-opacity-80">
+        <li><a href="#menu" class="hover:text-[#f2cc8f] transition">Menu</a></li>
+        <li><a href="#about" class="hover:text-[#f2cc8f] transition">About</a></li>
+        <li><a href="#contact" class="hover:text-[#f2cc8f] transition">Contact</a></li>
+      </ul>
+      <button class="block text-center w-full bg-[#f2cc8f] text-[#3d2c2e] px-4 py-2 rounded-md hover:bg-[#eebb6a] transition">Order Now</button>
+  </header>
+
+  <!-- ========================================================= -->
+  <!-- SECTION 2: HERO                                            -->
+  <!-- Hint: a big, bold headline. Center it or use two columns.  -->
+  <!-- Try: text-4xl/5xl, font-bold, max-w, mx-auto, py, bg color.-->
+  <!-- ========================================================= -->
+  <section class="bg-[url(./image/hero-bg.png)] bg-cover bg-center bg-no-repeat bg-linear-to-b from-black/70 to-black/70 bg-blend-multiply py-16 px-6 md:py-28 text-white flex flex-col items-center text-center gap-4 md:gap-6 min-h-100">
+
+    <h1 class="font-heading text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl max-w-4xl leading-tight uppercase">Great coffee, made with love.</h1>
+
+    <p class="mt-4 text-base text-white max-w-xl md:text-lg lg:text-xl tracking-wide font-body font-light">Freshly roasted beans, brewed to perfection, served in a cozy space you'll never want to leave. Start your morning the right way.</p>
+    <div class=" flex flex-col sm:flex-row gap-4 font-body font-medium">
+      <button class="bg-[#f2cc8f] text-[#3d2c2e] px-4 py-2 rounded-md hover:bg-[#eebb6a] transition">Order Now</button>
+      <button class="bg-[#f2cc8f] text-[#3d2c2e] px-4 py-2 rounded-md hover:bg-[#eebb6a] transition">View Our Menu</button>
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- SECTION 3: FEATURES (3 CARDS)                              -->
+  <!-- Hint: put these three in a row on desktop, stacked on      -->
+  <!-- mobile. Try: grid, grid-cols-1, md:grid-cols-3, gap,       -->
+  <!-- rounded, shadow, p-6, text-center.                         -->
+  <!-- ========================================================= -->
+  <section class="py-16 px-6 max-w-7xl mx-auto font-body">
+    <h2 class="font-heading text-3xl font-extrabold text-center tracking-tight text-gray-900 md:text-4xl capitalize mb-12">Why choose us?</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap 8">
+
+      <!-- Card 1 -->
+      <article class="flex flex-col items-center text center bg-amber-50/40 border-amber-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-200">
+        <span class="text-4xl mb-4 bg-amber-100/60 p-3 rounded-full text-amber-800">&#9749;</span>
+        <h3 class="font-heading text-xl font-bold text-gray-800 tracking-wide capitalize mb-2">Fresh Beans</h3>
+        <p class="text-sm text-gray-600 leading-relaxed font-light max-w-xs text-center">We roast our beans in small batches every week so every cup tastes its best.</p>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="flex flex-col items-center text center bg-amber-50/40 border-amber-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-200">
+        <span class="text-4xl mb-4 bg-amber-100/60 p-3 rounded-full text-amber-800">&#9889;</span>
+        <h3 class="font-heading text-xl font-bold text-gray-800 tracking-wide capitalize mb-2">Fast Service</h3>
+        <p class="text-sm text-gray-600 leading-relaxed font-light max-w-xs text-center">Order ahead and skip the line. Your coffee is ready when you walk in.</p>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="flex flex-col items-center text center bg-amber-50/40 border-amber-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-200">
+        <span class="text-4xl mb-4 bg-amber-100/60 p-3 rounded-full text-amber-800">&#127968;</span>
+        <h3 class="font-heading text-xl font-bold text-gray-800 tracking-wide capitalize mb-2">Cozy Space</h3>
+        <p class="text-sm text-gray-600 leading-relaxed font-light max-w-xs text-center">Comfy seats, free Wi-Fi, and good music. The perfect spot to work or relax.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- SECTION 4: MENU (CARD GRID)                                -->
+  <!-- Hint: a responsive grid of menu cards. Each card shows a   -->
+  <!-- name, a description, and a price. Try: grid-cols-2 or 3,   -->
+  <!-- border, rounded, p-4, flex justify-between for the price.  -->
+  <!-- ========================================================= -->
+  <section id="menu">
+    <h2>Our Menu</h2>
+    <div>
+      <article>
+        <h3>Espresso</h3>
+        <p>Rich and bold, a classic single shot.</p>
+        <span>&#8358;1,200</span>
+      </article>
+      <article>
+        <h3>Cappuccino</h3>
+        <p>Espresso with steamed milk and a thick layer of foam.</p>
+        <span>&#8358;1,800</span>
+      </article>
+      <article>
+        <h3>Café Latte</h3>
+        <p>Smooth espresso with plenty of steamed milk.</p>
+        <span>&#8358;2,000</span>
+      </article>
+      <article>
+        <h3>Cold Brew</h3>
+        <p>Slow-steeped for 18 hours. Smooth and refreshing.</p>
+        <span>&#8358;2,200</span>
+      </article>
+      <article>
+        <h3>Mocha</h3>
+        <p>Chocolate and espresso, topped with whipped cream.</p>
+        <span>&#8358;2,500</span>
+      </article>
+      <article>
+        <h3>Hot Chocolate</h3>
+        <p>Rich cocoa made with real melted chocolate.</p>
+        <span>&#8358;1,900</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- SECTION 5: ABOUT (TWO COLUMNS)                             -->
+  <!-- Hint: text on one side, an image box on the other.         -->
+  <!-- Try: flex or grid-cols-2, items-center, gap-8. On mobile,  -->
+  <!-- stack them. The empty div is an image placeholder — give   -->
+  <!-- it a background colour and a fixed height, or add an <img>.-->
+  <!-- ========================================================= -->
+  <section id="about">
+    <div>
+      <h2>Our Story</h2>
+      <p>Bean &amp; Brew started in 2020 with a simple idea: everyone deserves a really good cup of coffee. What began as a tiny corner stand is now a favourite spot in the neighbourhood.</p>
+      <p>We source our beans directly from local farmers, roast them ourselves, and serve them with a smile. Come say hello.</p>
+    </div>
+    <div>
+      <!-- image placeholder -->
+      <p>Image goes here</p>
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- SECTION 6: CONTACT FORM                                    -->
+  <!-- Hint: center the form, limit its width, space the fields.  -->
+  <!-- Try: max-w-md, mx-auto, flex flex-col, gap, and style the  -->
+  <!-- inputs: border, rounded, p-2, w-full, focus:ring.          -->
+  <!-- ========================================================= -->
+  <section id="contact">
+    <h2>Get in touch</h2>
+    <form>
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your name">
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="you@example.com">
+      </div>
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Tell us what's on your mind..."></textarea>
+      </div>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- SECTION 7: FOOTER                                          -->
+  <!-- Hint: multiple columns of links, then a copyright line     -->
+  <!-- underneath. Try: grid-cols-3, gap, a dark bg, light text,  -->
+  <!-- border-t, and a centered bottom row.                       -->
+  <!-- ========================================================= -->
+  <footer>
+    <div>
+      <div>
+        <h4>Bean &amp; Brew</h4>
+        <p>Great coffee, made with love since 2020.</p>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <ul>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Opening Hours</h4>
+        <p>Mon–Fri: 7am – 8pm</p>
+        <p>Sat–Sun: 8am – 10pm</p>
+      </div>
+    </div>
+    <p>&copy; 2026 Bean &amp; Brew. All rights reserved.</p>
+  </footer>
+
+
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const menuIcon = document.getElementById("menu-icon");
+    const mobileMenu = document.getElementById("menu-mobile");
+
+    menuBtn.addEventListener("click", function () {
+    mobileMenu.classList.toggle("hidden");
+
+    if (mobileMenu.classList.contains("hidden")) {
+      menuIcon.classList.remove("fa-xmark");
+      menuIcon.classList.add("fa-bars");
+    } else {
+      menuIcon.classList.remove("fa-bars");
+      menuIcon.classList.add("fa-xmark");
+    }
+    });
+  </script>
+
+</body>
+</html>
